@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCardValidator.Droid", "CreditCardValidator.Droid\CreditCardValidator.Droid.csproj", "{9D1D32A3-D13F-4F23-B7D4-EF9D52B06E60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCardValidator.Droid.UITests", "CreditCardValidator.Droid.UITests\CreditCardValidator.Droid.UITests.csproj", "{048C57FD-A3A8-41E5-94B6-C41C3B4F5D95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCardValidator", "CreditCardValidator\CreditCardValidator.csproj", "{99A825A6-6F99-4B94-9F65-E908A6347F1E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{048C57FD-A3A8-41E5-94B6-C41C3B4F5D95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{048C57FD-A3A8-41E5-94B6-C41C3B4F5D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{048C57FD-A3A8-41E5-94B6-C41C3B4F5D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{048C57FD-A3A8-41E5-94B6-C41C3B4F5D95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99A825A6-6F99-4B94-9F65-E908A6347F1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99A825A6-6F99-4B94-9F65-E908A6347F1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99A825A6-6F99-4B94-9F65-E908A6347F1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99A825A6-6F99-4B94-9F65-E908A6347F1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D1D32A3-D13F-4F23-B7D4-EF9D52B06E60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D1D32A3-D13F-4F23-B7D4-EF9D52B06E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D1D32A3-D13F-4F23-B7D4-EF9D52B06E60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D1D32A3-D13F-4F23-B7D4-EF9D52B06E60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
