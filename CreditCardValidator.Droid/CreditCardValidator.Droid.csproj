@@ -27,6 +27,11 @@
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
     <ConsolePause>false</ConsolePause>
+    <AndroidKeyStore>True</AndroidKeyStore>
+    <AndroidSigningKeyStore>/Users/godrei/keystores/bitrise-android-keystore.jks</AndroidSigningKeyStore>
+    <AndroidSigningStorePass>bitrise</AndroidSigningStorePass>
+    <AndroidSigningKeyAlias>bitrise-alias</AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>bitrise</AndroidSigningKeyPass>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -37,6 +42,11 @@
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <ConsolePause>false</ConsolePause>
     <AndroidSupportedAbis>armeabi-v7a;x86</AndroidSupportedAbis>
+    <AndroidKeyStore>True</AndroidKeyStore>
+    <AndroidSigningKeyStore>/Users/godrei/keystores/bitrise-android-keystore.jks</AndroidSigningKeyStore>
+    <AndroidSigningStorePass>bitrise</AndroidSigningStorePass>
+    <AndroidSigningKeyAlias>bitrise-alias</AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>bitrise</AndroidSigningKeyPass>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
