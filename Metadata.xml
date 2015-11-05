@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SampleMetadata>
+	<ID>{16D1D6E3-C6E5-4D2D-A219-B2FEA0C32F24}</ID>
+	<Products>Test-Cloud</Products>
+	<Gallery>true</Gallery>
+	<IsFullApplication>true</IsFullApplication>
+	<Level>Beginner</Level>
+	<Tags>UITest</Tags>
+	<Brief>This is the sample code for the UITest Quickstart for Android.</Brief>
+    <LicenseRequirement>Indie</LicenseRequirement>
+</SampleMetadata>
