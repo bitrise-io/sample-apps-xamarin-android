@@ -9,6 +9,18 @@ using Xamarin.UITest.Utils;
 
 namespace CreditCardValidator.Droid.UITests
 {
+	public class WaitTimes : IWaitTimes
+	{
+		public TimeSpan GestureWaitTimeout
+		{
+			get { return TimeSpan.FromMinutes(1); }
+		}
+		public TimeSpan WaitForTimeout
+		{
+			get { return TimeSpan.FromMinutes(1); }
+		}
+	}
+
 	[TestFixture]
 	public class Tests
 	{
@@ -21,6 +33,7 @@ namespace CreditCardValidator.Droid.UITests
 			ConfigureApp.Android
 				.ApkFile(apkPath)
 				.DeviceSerial(emulatorSerial)
+				.WaitTimes(new WaitTimes())
 				.StartApp();
 		}
 
