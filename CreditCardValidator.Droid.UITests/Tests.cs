@@ -38,7 +38,7 @@ namespace CreditCardValidator.Droid.UITests
 		}
 
 		[Test]
-		public void True()
+		public void AssertTrue()
 		{
 			Assert.True (true);
 		}
