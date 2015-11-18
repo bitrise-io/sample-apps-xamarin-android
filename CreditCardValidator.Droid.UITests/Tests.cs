@@ -27,7 +27,11 @@ namespace CreditCardValidator.Droid.UITests
 		[SetUp]
 		public void BeforeEachTest()
 		{
-			string apkPath = Environment.GetEnvironmentVariable ("ANDROID_APK_PATH");
+			string apkPath = "";
+			apkPath = Environment.GetEnvironmentVariable ("ANDROID_APK_PATH");
+			if (apkPath == "") {
+				apkPath = "../../../CreditCardValidator.Droid/bin/AnyCPU/Release/com.xamarin.example.creditcardvalidator-Signed.apk";
+			}
 			string emulatorSerial = Environment.GetEnvironmentVariable ("ANDROID_EMULATOR_SERIAL");
 
 			ConfigureApp.Android
