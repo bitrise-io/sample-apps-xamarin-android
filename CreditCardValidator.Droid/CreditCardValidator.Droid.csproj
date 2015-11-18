@@ -28,7 +28,7 @@
     <AndroidLinkMode>None</AndroidLinkMode>
     <ConsolePause>false</ConsolePause>
     <AndroidKeyStore>True</AndroidKeyStore>
-    <AndroidSigningKeyStore>/bitrise/keystores/keystore.jks</AndroidSigningKeyStore>
+    <AndroidSigningKeyStore>/Users/vagrant/keystores/keystore.jks</AndroidSigningKeyStore>
     <AndroidSigningStorePass>bitrise</AndroidSigningStorePass>
     <AndroidSigningKeyAlias>bitrise-alias</AndroidSigningKeyAlias>
     <AndroidSigningKeyPass>bitrise</AndroidSigningKeyPass>
@@ -43,7 +43,7 @@
     <ConsolePause>false</ConsolePause>
     <AndroidSupportedAbis>armeabi-v7a;x86</AndroidSupportedAbis>
     <AndroidKeyStore>True</AndroidKeyStore>
-    <AndroidSigningKeyStore>/bitrise/keystores/keystore.jks</AndroidSigningKeyStore>
+    <AndroidSigningKeyStore>/Users/vagrant/keystores/keystore.jks</AndroidSigningKeyStore>
     <AndroidSigningStorePass>bitrise</AndroidSigningStorePass>
     <AndroidSigningKeyAlias>bitrise-alias</AndroidSigningKeyAlias>
     <AndroidSigningKeyPass>bitrise</AndroidSigningKeyPass>
