@@ -30,7 +30,7 @@ namespace CreditCardValidator.Droid.UITests
 		{
 			string apkPath = "";
 			apkPath = Environment.GetEnvironmentVariable ("ANDROID_APK_PATH");
-			if (apkPath == "") {
+			if (apkPath == null || apkPath == "") {
 				string currentFile = new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath;
 				string dir = new FileInfo(currentFile).Directory.Parent.Parent.Parent.FullName;
 				apkPath = Path.Combine(dir, "com.xamarin.example.creditcardvalidator-Signed.apk");
