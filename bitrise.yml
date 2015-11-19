@@ -1,0 +1,89 @@
+format_version: 1.1.0
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+
+app:
+  envs:
+  - XAMARIN_PROJECT: ./CreditCardValidator.Droid/CreditCardValidator.Droid.csproj
+  - XAMARIN_TEST_PROJECT: ./CreditCardValidator.Droid.UITests/CreditCardValidator.Droid.UITests.csproj
+  - BITRISE_DEPLOY_DIR: ./deploy
+
+workflows:
+  primary:
+    before_run:
+    - unit-test
+    - archive
+    - test-cloud
+
+  archive:
+    envs:
+    - BITRISE_XAMARIN_CONFIGURATION: Release
+    - BITRISE_XAMARIN_PLATFORM: AnyCPU
+    steps:
+    - git::https://github.com/bitrise-io/steps-xamarin-android-archive.git@master:
+        title: Archive
+        inputs:
+        - xamarin_project: $XAMARIN_PROJECT
+        - xamarin_configuration: $BITRISE_XAMARIN_CONFIGURATION
+        - xamarin_platform: $BITRISE_XAMARIN_PLATFORM
+        - is_clean_build: yes
+        - sign_apk: no
+    - script:
+        title: Archive output
+        inputs:
+        - content: |-
+            echo "BITRISE_APK_PATH: ${BITRISE_APK_PATH}"
+
+  unit-test:
+    envs:
+    - BITRISE_XAMARIN_CONFIGURATION: Release
+    - BITRISE_XAMARIN_PLATFORM: AnyCPU
+    - EMULATOR_NAME: AVD_for_Nexus_4_by_Google
+    steps:
+    - git::https://github.com/bitrise-io/steps-start-android-emulator.git@master:
+        title: Start emulator
+        inputs:
+        - emulator_name: $EMULATOR_NAME
+    - git::https://github.com/bitrise-io/steps-xamarin-android-test.git@master:
+        title: Unit test
+        inputs:
+        - xamarin_project: $XAMARIN_PROJECT
+        - xamarin_test_project: $XAMARIN_TEST_PROJECT
+        - xamarin_configuration: $BITRISE_XAMARIN_CONFIGURATION
+        - xamarin_platform: $BITRISE_XAMARIN_PLATFORM
+        - is_clean_build: yes
+        - emulator_serial: $BITRISE_EMULATOR_SERIAL
+    - script:
+        title: Unit test output
+        inputs:
+        - content: |-
+            echo "BITRISE_XAMARIN_TEST_RESULT: $BITRISE_XAMARIN_TEST_RESULT"
+            echo "BITRISE_XAMARIN_TEST_FULL_RESULTS_TEXT: $BITRISE_XAMARIN_TEST_FULL_RESULTS_TEXT"
+
+  test-cloud:
+    envs:
+    - BITRISE_XAMARIN_CONFIGURATION: Release
+    - BITRISE_XAMARIN_PLATFORM: AnyCPU
+    - APP_NAME: Bitrise android test
+    - ASYNC: yes
+    - SERIES: master
+    steps:
+    - git::https://github.com/bitrise-io/steps-xamarin-test-cloud-for-android.git@master:
+        title: Test cloud
+        inputs:
+        - xamarin_project: $XAMARIN_PROJECT
+        - xamarin_test_project: $XAMARIN_TEST_PROJECT
+        - xamarin_configuration: $BITRISE_XAMARIN_CONFIGURATION
+        - xamarin_platform: $BITRISE_XAMARIN_PLATFORM
+        - is_clean_build: yes
+        - xamarin_user: $USER
+        - test_cloud_api_key: $API_KEY
+        - test_cloud_devices: $DEVICES
+        - test_cloud_app_name: $APP_NAME
+        - test_cloud_async: $ASYNC
+        - test_cloud_series: $SERIES
+    - script:
+        title: Test cloud output
+        inputs:
+        - content: |-
+            echo "BITRISE_XAMARIN_TEST_RESULT: $BITRISE_XAMARIN_TEST_RESULT"
+            echo "BITRISE_XAMARIN_TEST_FULL_RESULTS_TEXT: $BITRISE_XAMARIN_TEST_FULL_RESULTS_TEXT"
