@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using NUnit.Framework;
 using Xamarin.UITest;
 using Xamarin.UITest.Android;
@@ -27,7 +28,13 @@ namespace CreditCardValidator.Droid.UITests
 		[SetUp]
 		public void BeforeEachTest()
 		{
-			string apkPath = Environment.GetEnvironmentVariable ("ANDROID_APK_PATH");
+			string apkPath = "";
+			apkPath = Environment.GetEnvironmentVariable ("ANDROID_APK_PATH");
+			if (apkPath == null || apkPath == "") {
+				string currentFile = new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath;
+				string dir = new FileInfo(currentFile).Directory.Parent.Parent.Parent.FullName;
+				apkPath = Path.Combine(dir, "com.xamarin.example.creditcardvalidator-Signed.apk");
+			}
 			string emulatorSerial = Environment.GetEnvironmentVariable ("ANDROID_EMULATOR_SERIAL");
 
 			ConfigureApp.Android
