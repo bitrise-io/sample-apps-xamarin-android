@@ -15,11 +15,11 @@ namespace CreditCardValidator.Droid.UITests
 	{
 		public TimeSpan GestureWaitTimeout
 		{
-			get { return TimeSpan.FromMinutes(1); }
+			get { return TimeSpan.FromMinutes(5); }
 		}
 		public TimeSpan WaitForTimeout
 		{
-			get { return TimeSpan.FromMinutes(1); }
+			get { return TimeSpan.FromMinutes(5); }
 		}
 	}
 
