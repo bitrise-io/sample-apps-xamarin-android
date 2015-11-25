@@ -2,6 +2,9 @@
 .bitrise.secrets.yml
 deploy/*
 
+# Calabash
+test_servers
+
 # Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
 [Bb]in/
 [Oo]bj/
