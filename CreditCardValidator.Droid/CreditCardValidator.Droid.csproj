@@ -75,11 +75,11 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\layout\CreditCardValidationSuccess.axml" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\CreditCardValidator\CreditCardValidator.csproj">
       <Project>{99A825A6-6F99-4B94-9F65-E908A6347F1E}</Project>
       <Name>CreditCardValidator</Name>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
