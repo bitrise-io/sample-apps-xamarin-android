@@ -33,6 +33,7 @@ namespace CreditCardValidator.Droid.UITests
 			string emulatorSerial = Environment.GetEnvironmentVariable ("ANDROID_EMULATOR_SERIAL");
 
 			if (apkPath != null && apkPath != "" && emulatorSerial != null && emulatorSerial != "") {
+				// In case of Bitrise step: steps-xamarin-uitest
 				ConfigureApp
 					.Android
 					.ApkFile (apkPath)
@@ -40,6 +41,7 @@ namespace CreditCardValidator.Droid.UITests
 					.WaitTimes(new WaitTimes())
 					.StartApp ();
 			} else {
+				// In case of Bitrise step: steps-xamarin-testcloud-for-ios
 				ConfigureApp
 					.Android
 					.WaitTimes(new WaitTimes())
