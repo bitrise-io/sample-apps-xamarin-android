@@ -39,7 +39,6 @@
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <ConsolePause>false</ConsolePause>
     <AndroidSupportedAbis>armeabi-v7a;x86</AndroidSupportedAbis>
     <AndroidKeyStore>True</AndroidKeyStore>
@@ -47,6 +46,8 @@
     <AndroidSigningStorePass>bitrise</AndroidSigningStorePass>
     <AndroidSigningKeyAlias>bitrise-alias</AndroidSigningKeyAlias>
     <AndroidSigningKeyPass>bitrise</AndroidSigningKeyPass>
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
