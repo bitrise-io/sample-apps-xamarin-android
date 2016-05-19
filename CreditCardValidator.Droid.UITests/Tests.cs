@@ -10,6 +10,19 @@ using Xamarin.UITest.Utils;
 
 namespace CreditCardValidator.Droid.UITests
 {
+	// Android emulators are slow, give some time for test.
+	public class WaitTimes : IWaitTimes
+	{
+		public TimeSpan GestureWaitTimeout
+		{
+			get { return TimeSpan.FromMinutes(5); }
+		}
+		public TimeSpan WaitForTimeout
+		{
+			get { return TimeSpan.FromMinutes(5); }
+		}
+	}
+
 	[TestFixture]
 	public class Tests
 	{
@@ -23,11 +36,13 @@ namespace CreditCardValidator.Droid.UITests
 				ConfigureApp
 					.Android
 					.ApkFile (apkPath)
+					.WaitTimes(new WaitTimes())
 					.StartApp ();
 			} else {
 				// In case of Bitrise step: steps-xamarin-testcloud
 				ConfigureApp
 					.Android
+					.WaitTimes(new WaitTimes())
 					.StartApp ();
 			}
 		}
