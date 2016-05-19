@@ -27,7 +27,6 @@
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
     <ConsolePause>false</ConsolePause>
-    <AndroidKeyStore>True</AndroidKeyStore>
     <AndroidSigningKeyStore>bitrise-android-keystore.jks</AndroidSigningKeyStore>
     <AndroidSigningStorePass>bitrise</AndroidSigningStorePass>
     <AndroidSigningKeyAlias>bitrise-alias</AndroidSigningKeyAlias>
@@ -41,7 +40,6 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <AndroidSupportedAbis>armeabi-v7a;x86</AndroidSupportedAbis>
-    <AndroidKeyStore>True</AndroidKeyStore>
     <AndroidSigningKeyStore>bitrise-android-keystore.jks</AndroidSigningKeyStore>
     <AndroidSigningStorePass>bitrise</AndroidSigningStorePass>
     <AndroidSigningKeyAlias>bitrise-alias</AndroidSigningKeyAlias>
