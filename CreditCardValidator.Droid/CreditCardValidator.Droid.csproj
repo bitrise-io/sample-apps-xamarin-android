@@ -46,6 +46,7 @@
     <AndroidSigningKeyPass>bitrise</AndroidSigningKeyPass>
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidKeyStore>True</AndroidKeyStore>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
