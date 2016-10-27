@@ -2,8 +2,6 @@
 
 using Android.App;
 using Android.Content;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using Android.OS;
 using CreditCardValidation.Common;
@@ -24,11 +22,12 @@ namespace CreditCardValidator.Droid
 			base.OnCreate(bundle);
 
 			SetContentView(Resource.Layout.Main);
-					
+
 			_errorMessagesTextField = FindViewById<TextView>(Resource.Id.errorMessagesText);
 			_creditCardTextField = FindViewById<EditText>(Resource.Id.creditCardNumberText);
 			_validateButton = FindViewById<Button>(Resource.Id.validateButton);
-			_validateButton.Click += (sender, e) =>{
+			_validateButton.Click += (sender, e) =>
+			{
 				_errorMessagesTextField.Text = String.Empty;
 				string errMessage;
 

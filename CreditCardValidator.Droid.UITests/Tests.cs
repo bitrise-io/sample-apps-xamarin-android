@@ -1,11 +1,6 @@
 ﻿using System;
-using System.IO;
-using System.Linq;
-using System.Reflection;
 using NUnit.Framework;
 using Xamarin.UITest;
-using Xamarin.UITest.Android;
-using Xamarin.UITest.Queries;
 using Xamarin.UITest.Utils;
 
 namespace CreditCardValidator.Droid.UITests
@@ -13,6 +8,10 @@ namespace CreditCardValidator.Droid.UITests
 	// Android emulators are slow, give some time for test.
 	public class WaitTimes : IWaitTimes
 	{
+		public TimeSpan GestureCompletionTimeout
+		{
+			get { return TimeSpan.FromMinutes(5); }
+		}
 		public TimeSpan GestureWaitTimeout
 		{
 			get { return TimeSpan.FromMinutes(5); }
@@ -29,28 +28,30 @@ namespace CreditCardValidator.Droid.UITests
 		[SetUp]
 		public void BeforeEachTest()
 		{
-			string apkPath = Environment.GetEnvironmentVariable ("ANDROID_APK_PATH");
+			string apkPath = Environment.GetEnvironmentVariable("ANDROID_APK_PATH");
 
-			if (apkPath != null && apkPath != "") {
+			if (apkPath != null && apkPath != "")
+			{
 				// In case of Bitrise step: steps-xamarin-uitest
 				ConfigureApp
 					.Android
-					.ApkFile (apkPath)
+					.ApkFile(apkPath)
 					.WaitTimes(new WaitTimes())
-					.StartApp ();
-			} else {
+					.StartApp();
+			}
+			else {
 				// In case of Bitrise step: steps-xamarin-testcloud
 				ConfigureApp
 					.Android
 					.WaitTimes(new WaitTimes())
-					.StartApp ();
+					.StartApp();
 			}
 		}
 
 		[Test]
 		public void AssertTrue()
 		{
-			Assert.True (true);
+			Assert.True(true);
 		}
 	}
 }
