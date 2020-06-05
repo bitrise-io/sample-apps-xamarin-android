@@ -37,7 +37,7 @@ GEM
     multi_json (1.12.1)
     multi_test (0.1.2)
     retriable (2.0.2)
-    rubyzip (1.2.0)
+    rubyzip (1.3.0)
     slowhandcuke (0.0.3)
       cucumber
     thor (0.19.4)
